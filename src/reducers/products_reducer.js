@@ -13,11 +13,23 @@ const products_reducer = (state, action) => {
   switch (action.type) {
     case SIDEBAR_OPEN:
       return { ...state, isSideBarOpen: true }
-   
+
     case SIDEBAR_CLOSE:
       return { ...state, isSideBarOpen: false }
-     
-
+    case GET_PRODUCTS_BEGIN:
+      return { ...state, products_loading: true }
+    case GET_PRODUCTS_SUCCESS:
+      const featured_products = action.payload.filter((product) => {
+        return product.featured === true
+      })
+      return {
+        ...state,
+        products_loading: false,
+        featured_products,
+        products: action.payload,
+      }
+    case GET_PRODUCTS_ERROR:
+      return { ...state, products_loading: false, products_error: true }
     default:
       break
   }
