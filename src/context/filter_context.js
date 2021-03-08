@@ -27,9 +27,9 @@ export const FilterProvider = ({ children }) => {
      dispatch({ type: LOAD_PRODUCTS, payload: products })
 
   }, [products])
-  console.log(state.all_products);
+  
   return (
-    <FilterContext.Provider value='filter context'>
+    <FilterContext.Provider value={{...state}}>
       {children}
     </FilterContext.Provider>
   )
