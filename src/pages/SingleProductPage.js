@@ -35,7 +35,6 @@ const SingleProductPage = () => {
       }, 3000)
     }
   }, [error])
-  console.log(product);
   if (loading) {
     return <Loading />
   }
