@@ -12,32 +12,35 @@ import { AboutPage,
   SingleProductPage } from './pages'
 
 function App() {
-  return <Router>
-    <Navbar/>
-    <Sidebar/>
-    <Switch>
-    <Route exact path="/">
-      <HomePage/>
-    </Route>
-    <Route exact path="/about">
-      <AboutPage/>
-    </Route>
-    <Route exact path="/cart">
-      <CartPage/>
-    </Route>
-    <Route exact path="/products">
-      <ProductsPage/>
-    </Route>
-    <Route exact path="/products/:id" children={<SingleProductPage/>}/>
-    <PrivateRoute exact path="/checkout">
-      <CheckoutPage/>
-    </PrivateRoute>
-    <Route exact path="*">
-      <ErrorPage/>
-    </Route>
-    </Switch>
-    <Footer/>
+  return
+  ;<AuthWrapper>
+    <Router>
+      <Navbar />
+      <Sidebar />
+      <Switch>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+        <Route exact path='/about'>
+          <AboutPage />
+        </Route>
+        <Route exact path='/cart'>
+          <CartPage />
+        </Route>
+        <Route exact path='/products'>
+          <ProductsPage />
+        </Route>
+        <Route exact path='/products/:id' children={<SingleProductPage />} />
+        <PrivateRoute exact path='/checkout'>
+          <CheckoutPage />
+        </PrivateRoute>
+        <Route exact path='*'>
+          <ErrorPage />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
+  </AuthWrapper> 
 }
 
 export default App
