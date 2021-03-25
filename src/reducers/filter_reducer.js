@@ -124,7 +124,7 @@ const filter_reducer = (state, action) => {
       break
   }
   return state
-  throw new Error(`No Matching "${action.type}" - action type`)
+ 
 }
 
 export default filter_reducer

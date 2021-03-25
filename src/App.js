@@ -12,8 +12,7 @@ import { AboutPage,
   SingleProductPage } from './pages'
 
 function App() {
-  return
-  ;<AuthWrapper>
+  return<AuthWrapper>
     <Router>
       <Navbar />
       <Sidebar />

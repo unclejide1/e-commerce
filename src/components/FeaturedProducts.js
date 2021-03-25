@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
   if(error){
     return <Error/>
   }
-  return <Wrapper>
+  return <Wrapper className="section">
     <div className="title">
       <h2>Featured Products</h2>
       <div className="underline"></div>
@@ -23,6 +23,9 @@ const FeaturedProducts = () => {
           return <Product key={product.id} {...product}/>
         })}
       </div>
+      <Link to="/products" className="btn">
+        all products
+      </Link>
     </div>
   </Wrapper>
 }
